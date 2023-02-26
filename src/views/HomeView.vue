@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import AppHero from '../components/AppHero.vue'
+import NavBar from '../components/NavBar.vue'
+import ProductsDisplay from '../components/ProductsDisplay.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="flex flex-col items-center py-2 max-w-5xl">
+    <NavBar />
+    <AppHero />
+    <ProductsDisplay />
+  </div>
 </template>
