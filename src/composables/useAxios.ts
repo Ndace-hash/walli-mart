@@ -1,10 +1,11 @@
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
+// import type { Product } from '@/types/utils'
 
-export const getProducts: (endpoint: string) => Product[] = async (endpoint: string) => {
+export const getProducts = async (endpoint: string) => {
   try {
     const { data } = await axios.get(endpoint)
     return data
-  } catch (error: Error | AxiosError) {
+  } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error(`AxiosError: ${error.message}`)
     } else console.log(error)
