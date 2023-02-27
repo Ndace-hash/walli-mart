@@ -10,7 +10,8 @@
         <Font-awesome-icon icon="fa-solid fa-star" />
         {{ product.rating.rate }}</span
       >
-      <button class="text-sm font-semibold border-2 py-1 px-2">
+
+      <button class="text-sm font-semibold border-2 py-1 px-2" @click="addToCart(product)">
         <Font-awesome-icon icon="fa-solid fa-plus" />
         <span>add to cart</span>
       </button>
@@ -19,5 +20,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps(["product"]);
+import type { Product } from '@/types/utils'
+import store from '@/store'
+defineProps(['product'])
+
+const addToCart = (item: Product) => {
+  store.cart.push(item)
+  localStorage.setItem('cart', JSON.stringify(store.cart))
+}
 </script>
