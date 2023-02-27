@@ -2,7 +2,7 @@
   <div>
     <div class="flex gap-6 items-center">
       <h1 class="text-2xl capitalize font-semibold flex gap-2 items-center">
-        <Font-awesome-icon icon="fa-solid fa-shopping-cart" />
+        <Font-awesome-icon icon="fa-solid fa-heart" />
         <span>My wishlist</span>
       </h1>
       <span

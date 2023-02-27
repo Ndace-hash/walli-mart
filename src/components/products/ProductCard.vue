@@ -1,5 +1,8 @@
 <template>
-  <div class="w-[300px] border-2 py-2 px-3 min-h-[400px] flex flex-col justify-between">
+  <div class="w-[300px] border-2 py-2 px-3 min-h-[400px] flex flex-col justify-between relative">
+    <button class="absolute right-6 top-2 text-2xl" @click="addToWishlist(product)">
+      <Font-awesome-icon icon="fa-solid fa-heart" />
+    </button>
     <div class="w-full h-[250px] flex justify-center items-center">
       <img :src="product.image" :alt="product.title" class="h-full" />
     </div>
@@ -27,5 +30,9 @@ defineProps(['product'])
 const addToCart = (item: Product) => {
   store.cart.push(item)
   localStorage.setItem('cart', JSON.stringify(store.cart))
+}
+const addToWishlist = (item: Product) => {
+  store.wishlist.push(item)
+  localStorage.setItem('wishlist', JSON.stringify(store.wishlist))
 }
 </script>
