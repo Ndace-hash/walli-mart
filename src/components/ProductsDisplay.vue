@@ -29,7 +29,21 @@ interface Product {
   title: string
 }
 
-let products = ref<Product[] | null>(null)
+// let products = ref<Product[] | null>(null)
+let products = ref<Product[] | null>([
+  {
+    category: 'food',
+    description: 'very delicios steak meal',
+    id: 231,
+    image: '../assets/stake-meals.jpg',
+    price: 2.99,
+    rating: {
+      rate: 5,
+      count: 200
+    },
+    title: 'german steak'
+  }
+])
 
 onMounted(async () => {
   try {
