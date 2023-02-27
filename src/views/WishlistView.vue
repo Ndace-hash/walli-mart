@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex flex-col gap-5">
-      <CartItem v-for="(item, index) in store.cart" :key="index" :Item="item" />
+      <WishlistItem v-for="(item, index) in store.wishlist" :key="index" :Item="item" />
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { onBeforeMount } from 'vue'
 import store from '@/store'
-import CartItem from '@/components/CartItem.vue'
+import WishlistItem from '@/components/WishlistItem.vue'
 
 onBeforeMount(() => {
   let wishlistString = localStorage.getItem('wishlist')
