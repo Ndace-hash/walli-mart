@@ -15,6 +15,7 @@ import { getProducts } from '@/composables/useAxios'
 import { ref, onMounted } from 'vue'
 import ProductCard from './products/ProductCard.vue'
 import AppHeading from './AppHeading.vue'
+import imageURL from '@/assets/stake-meals.jpg'
 
 interface Product {
   category: string
@@ -35,7 +36,7 @@ let products = ref<Product[] | null>([
     category: 'food',
     description: 'very delicios steak meal',
     id: 231,
-    image: '../assets/stake-meals.jpg',
+    image: imageURL,
     price: 2.99,
     rating: {
       rate: 5,
@@ -44,7 +45,7 @@ let products = ref<Product[] | null>([
     title: 'german steak'
   }
 ])
-
+console.log(products.value)
 onMounted(async () => {
   try {
     const data = await getProducts('https://fakestoreapi.com/products')
