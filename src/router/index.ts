@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
+import WishlistView from '../views/WishlistView.vue'
 import CartView from '../views/CartView.vue'
 
 const router = createRouter({
@@ -14,7 +14,7 @@ const router = createRouter({
     {
       path: '/wishlist',
       name: 'wishlist',
-      component: AboutView
+      component: WishlistView
     },
     {
       path: '/cart',
