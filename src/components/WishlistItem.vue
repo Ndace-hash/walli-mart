@@ -7,7 +7,7 @@
       <h3 class="font-extrabold capitalize text-lg">{{ Item.title }}</h3>
       <p class="font-medium text-base my-4">${{ Item.price }}</p>
       <div class="flex items-center justify-start gap-3 mt-4">
-        <button class="py-1 px-3 border-2">View</button>
+        <button class="py-1 px-3 border-2" @click="viewProduct(Item.id)">View</button>
         <button class="py-1 px-3 border-2">Remove</button>
       </div>
     </div>
@@ -15,13 +15,14 @@
 </template>
 
 <script lang="ts">
+import { viewProduct } from '@/composables/useRouter'
 import store from '@/store'
 export default {
+  setup() {
+    return { viewProduct }
+  },
   props: ['Item'],
   methods: {
-    viewProduct() {
-      this.$router.push({ name: 'productDetails' })
-    },
     removeFromWishlist(id: number) {
       store.wishlist = store.wishlist.filter((item) => item.id !== id)
       localStorage.setItem('wishlist', JSON.stringify(store.wishlist))
