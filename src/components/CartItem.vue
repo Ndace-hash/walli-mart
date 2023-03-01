@@ -7,7 +7,7 @@
       <img :src="Item.image" :alt="Item.title" />
     </div>
     <div class="py-2">
-      <h3 class="font-extrabold capitalize text-lg">{{ Item.title }}</h3>
+      <h3 class="font-extrabold capitalize text-lg w-40">{{ Item.title }}</h3>
       <p class="font-medium text-base my-4">${{ Item.price }}</p>
       <div>
         <p class="sr-only">quantity</p>

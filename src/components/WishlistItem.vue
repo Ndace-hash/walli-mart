@@ -4,7 +4,7 @@
       <img :src="Item.image" :alt="Item.title" />
     </div>
     <div class="py-2">
-      <h3 class="font-extrabold capitalize text-lg">{{ Item.title }}</h3>
+      <h3 class="font-extrabold capitalize text-lg w-40">{{ Item.title }}</h3>
       <p class="font-medium text-base my-4">${{ Item.price }}</p>
       <div class="flex items-center justify-start gap-3 mt-4">
         <button class="py-1 px-3 border-2" @click="viewProduct(Item.id)">View</button>
