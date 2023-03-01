@@ -3,7 +3,7 @@
     <AppHeading title="products" size="text-xl" class="text-center my-4" />
 
     <section class="flex flex-wrap gap-x-4 gap-y-6 justify-center">
-      <article v-for="product in products" :key="product.id">
+      <article v-for="product in productsWithQuantity" :key="product.id">
         <ProductCard :product="product" />
       </article>
     </section>
@@ -12,23 +12,11 @@
 
 <script setup lang="ts">
 import { getProducts } from '@/composables/useAxios'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import ProductCard from './products/ProductCard.vue'
 import AppHeading from './AppHeading.vue'
 import imageURL from '@/assets/stake-meals.jpg'
-
-interface Product {
-  category: string
-  description: string
-  id: number
-  image: string
-  price: number
-  rating: {
-    rate: number
-    count: number
-  }
-  title: string
-}
+import type { Product } from '@/types/utils'
 
 // let products = ref<Product[] | null>(null)
 let products = ref<Product[] | null>([
@@ -45,6 +33,16 @@ let products = ref<Product[] | null>([
     title: 'german steak'
   }
 ])
+
+const productsWithQuantity = computed(() => {
+  if (products.value !== null) {
+    return products.value.map((item) => ({
+      ...item,
+      quantity: 1
+    }))
+  }
+  return null
+})
 console.log(products.value)
 onMounted(async () => {
   try {

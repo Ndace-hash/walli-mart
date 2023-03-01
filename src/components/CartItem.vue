@@ -15,7 +15,7 @@
           <button class="border-2 py-1 px-3 rounded-lg">
             <Font-awesome-icon icon="fa-solid fa-plus" />
           </button>
-          <span>1</span>
+          <span>{{ Item.quantity }}</span>
           <button class="border-2 py-1 px-3 rounded-lg">
             <Font-awesome-icon icon="fa-solid fa-minus" />
           </button>
