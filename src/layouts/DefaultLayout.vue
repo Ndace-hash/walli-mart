@@ -1,8 +1,10 @@
 <template>
-  <div class="py-2 max-w-5xl">
+  <div class="py-2 max-w-5xl relative">
     <NavBar />
-    <slot />
-    <AppFooter />
+    <div class="mb-12">
+      <slot />
+    </div>
+    <AppFooter class="absolute bottom-0" />
   </div>
 </template>
 
