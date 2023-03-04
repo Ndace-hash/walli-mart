@@ -12,11 +12,14 @@
       <div>
         <p class="sr-only">quantity</p>
         <div class="flex items-center justify-start gap-6">
-          <button class="border-2 py-1 px-3 rounded-lg">
+          <button class="border-2 py-1 px-3 rounded-lg" @click="quantity++">
             <Font-awesome-icon icon="fa-solid fa-plus" />
           </button>
-          <span>{{ Item.quantity }}</span>
-          <button class="border-2 py-1 px-3 rounded-lg">
+          <span>{{ quantity }}</span>
+          <button
+            class="border-2 py-1 px-3 rounded-lg"
+            @click="quantity > 1 ? quantity-- : (quantity = 1)"
+          >
             <Font-awesome-icon icon="fa-solid fa-minus" />
           </button>
         </div>
@@ -28,6 +31,11 @@
 <script lang="ts">
 import store from '@/store'
 export default {
+  data() {
+    return {
+      quantity: 1
+    }
+  },
   props: ['Item'],
   methods: {
     removeFromCart(id: number) {
