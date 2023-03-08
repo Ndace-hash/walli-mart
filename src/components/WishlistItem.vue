@@ -15,17 +15,21 @@
 </template>
 
 <script lang="ts">
-import { viewProduct } from '@/composables/useRouter'
 import store from '@/store'
 export default {
-  setup() {
-    return { viewProduct }
-  },
   props: ['Item'],
   methods: {
     removeFromWishlist(id: number) {
       store.wishlist = store.wishlist.filter((item) => item.id !== id)
       localStorage.setItem('wishlist', JSON.stringify(store.wishlist))
+    },
+    viewProduct(id: number) {
+      this.$router.push({
+        name: 'productDetails',
+        params: {
+          id
+        }
+      })
     }
   }
 }

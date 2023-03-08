@@ -3,10 +3,14 @@
     <button class="absolute right-6 top-2 text-2xl" @click="addToWishlist(product)">
       <Font-awesome-icon icon="fa-regular fa-heart" />
     </button>
-    <div class="w-full h-[250px] flex justify-center items-center">
-      <img :src="product.image" :alt="product.title" class="h-full" />
-    </div>
-    <h4 class="text-sm capitalize mb-1">{{ product.title }}</h4>
+    <RouterLink :to="`/product/${product.id}`">
+      <div class="w-full h-[250px] flex justify-center items-center">
+        <img :src="product.image" :alt="product.title" class="h-full" />
+      </div>
+    </RouterLink>
+    <RouterLink :to="`/product/${product.id}`">
+      <h4 class="text-sm capitalize mb-1">{{ product.title }}</h4>
+    </RouterLink>
     <h3 class="text-lg font-bold mb-1">${{ product.price }}</h3>
     <div class="flex justify-between items-center">
       <span class="text-xs flex items-center justify-center gap-[2px]">

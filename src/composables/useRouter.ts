@@ -1,10 +1,14 @@
 import { useRouter } from 'vue-router'
-const router = useRouter()
-export const viewProduct = (id: number) => {
-  router.push({
-    name: 'productDetails',
-    params: {
-      id
-    }
-  })
+export const goToProductPage = () => {
+  const viewProduct = (id: number) => {
+    const router = useRouter()
+    router.push({
+      name: 'productDetails',
+      params: {
+        id
+      }
+    })
+  }
+
+  return { viewProduct }
 }
