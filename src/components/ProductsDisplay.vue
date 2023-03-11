@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-center">
+  <section class="flex flex-col items-center" id="products">
     <AppHeading title="products" size="text-xl" class="text-center my-4" />
     <AppLoader v-if="isLoading" />
     <section class="flex flex-wrap gap-x-4 gap-y-6 justify-center" v-else>

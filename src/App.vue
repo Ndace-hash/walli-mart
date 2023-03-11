@@ -15,3 +15,9 @@ import NotifState from './store/useNotification'
     <RouterView />
   </DefaultLayout>
 </template>
+
+<style>
+body {
+  scroll-behavior: smooth;
+}
+</style>

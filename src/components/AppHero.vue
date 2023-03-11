@@ -9,11 +9,12 @@
       <p class="text-sm">
         Fast Shipping, Easy Returns, and Secure Checkout - Shop with Confidence Today!
       </p>
-      <button
+      <a
+        href="#products"
         class="capitalize font-semibold border-2 w-max py-1 px-3 flex items-center justify-center gap-2 text-lg bg-black text-white"
       >
         <span>buy now</span> <Font-awesome-icon icon="fa-solid fa-tag" />
-      </button>
+      </a>
     </div>
     <div class="h-full place-items-center overflow-y-hidden object-cover hidden md:flex">
       <img src="../assets/display.jpg" class="w-full h-full" />
