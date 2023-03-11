@@ -29,14 +29,23 @@
 <script setup lang="ts">
 import type { Product } from '@/types/utils'
 import store from '@/store'
+import NotifState from '../../store/useNotification'
 defineProps(['product'])
 
 const addToCart = (item: Product) => {
   store.cart.push(item)
   localStorage.setItem('cart', JSON.stringify(store.cart))
+
+  NotifState.product = item
+  NotifState.addTo = 'cart'
+  NotifState.visible = true
 }
 const addToWishlist = (item: Product) => {
   store.wishlist.push(item)
   localStorage.setItem('wishlist', JSON.stringify(store.wishlist))
+
+  NotifState.product = item
+  NotifState.addTo = 'wishlist'
+  NotifState.visible = true
 }
 </script>
