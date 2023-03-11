@@ -11,7 +11,7 @@
       >
     </div>
 
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-5 min-h-screen">
       <CartItem v-for="(item, index) in store.cart" :key="index" :Item="item" />
     </div>
   </div>

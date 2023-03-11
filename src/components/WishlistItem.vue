@@ -8,7 +8,7 @@
       <p class="font-medium text-base my-4">${{ Item.price }}</p>
       <div class="flex items-center justify-start gap-3 mt-4">
         <button class="py-1 px-3 border-2" @click="viewProduct(Item.id)">View</button>
-        <button class="py-1 px-3 border-2">Remove</button>
+        <button class="py-1 px-3 border-2" @click="removeFromWishlist(Item.id)">Remove</button>
       </div>
     </div>
   </div>
